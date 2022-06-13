@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order</title>
+    <link rel="stylesheet" href="Q20.css">
+    <script type="text/javascript" src="Q20.js"></script>
+</head>
+
+<body onmouseout="clearHelp()">
+    <h1>Pizza Order</h1>
+    <h2>Pizza Base Value = Rs.10</h2>
+    <div id="data">
+        <form onsubmit="event.preventDefault()" id="order_form">
+            <label class="required" for="cust_name">Name</label><input type="text" name="customer_name" id="cust_name"
+                required onmouseover="enterValue('Enter your Name')"><br>
+            <label class="required" for="cust_email">Email</label><input type="text" name="customer_email"
+                id="cust_email" required onmouseover="enterValue('Enter your Email')">
+            <br>
+            <div id="toppingsdiv" onmouseover="enterValue('Select your Favourite Toppings')">
+                <b>Toppings:-</b>
+
+                <label for="extra_cheese">Extra Cheese</label><input type="checkbox" id="extra_cheese"
+                    value="Extra Cheese">
+                <label for="pepper">Pepper</label><input type="checkbox" id="pepper" value="Pepper"><label
+                    for="olives">Olives</label><input type="checkbox" id="olives" value="Olives"><label
+                    for="tomatos">Tomatos</label><input type="checkbox" id="tomatos" value="Tomatos">
+            </div>
+            <div id="deliverydiv" onmouseover="enterValue('Will you come and pick up or want us to deliver')">
+                <h4>How do you want to get your Pizza</h4> <label for="delivery">Delivery</label><input type="radio"
+                    id="delivery" value="delivery" name="serve"> <label for="pickup">Pick Up</label><input type="radio"
+                    id="pickup" value="pickup" name="serve" checked><br>
+            </div><br>
+            <div id="tipsdiv" onmouseover="enterValue('Kindly select your tip % of bill')">
+                <b>Tip?</b> <select name="tip" id="tips">
+                    <option value="15">15%</option>
+                    <option value="20">20%</option>
+                    <option value="25">25%</option>
+                </select>
+            </div>
+            <hr>
+            <div id="addrdiv" onmouseover="enterValue('Please provide complete address')">
+                <label class="required" for="addr">Address</label><textarea id="addr" name="address" rows="5"
+                    cols="50"></textarea>
+            </div>
+            <br>
+            <input type="submit" value="Submit" id="submit" onclick="validateForm()">
+            <input type="reset" value="Reset" id="reset">
+            <input type="button" id="summary" value="Show Summary" disabled onclick="showSummary()">
+        </form>
+    </div>
+    <div id="help">
+        <h3>Help</h3>
+        <textarea id="helptext" rows="5" cols="20"></textarea>
+    </div>
+
+    <div id="summary_modal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <table id="summary_table">
+              <tbody>
+                  <tr>
+                      <td>Customer Name</td>
+                      <td id="c_name"></td>
+                  </tr>
+                  <tr>
+                    <td>Customer Email</td>
+                    <td id="c_email"></td>
+                </tr>
+                <tr>
+                    <td>Customer Address</td>
+                    <td id="c_addr"></td>
+                </tr>
+                <tr>
+                    <td>Toppings Selected</td>
+                    <td id="toppings_selected"></td>
+                </tr>
+                <tr>
+                    <td>Delivery Option</td>
+                    <td id="delivery_opted"></td>
+                </tr>
+                <tr>
+                    <td>Total Price</td>
+                    <td id="total"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Order" onclick="window.alert('Order Placed Successfully');clearSummary()"></td>
+                    <td><input type="reset" value="Cancel" onclick="clearSummary()"></td>
+                </tr>
+              </tbody>
+          </table>
+        </div>
+      
+      </div>
+
+
+</body>
+
+</html>

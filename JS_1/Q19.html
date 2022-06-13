@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script type="text/javascript" src="Q19.js"></script>
+    <style>
+        
+        div{
+            width: 50%;
+            margin: auto;
+        }
+        table,th,tr{
+            width: 100%;
+            text-align: center;
+            height: 20px;
+            
+        }
+        input[type="button"]
+         {
+         background-color:rgb(190, 233, 190);
+         color: black;
+         
+         width:100%
+         }
+  
+         input[type="text"]
+         {
+         background-color:white;
+         border: solid black 2px;
+         width:100%
+         }
+    </style>
+</head>
+<body>
+    
+    <div id="calcdiv">
+        <table >
+            <tr>
+                <th colspan="4"> Calculator</th>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="text" id="result" readonly> </td> 
+                <td>    <input type="button" id="clear" value="C" onclick="clr()">
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" id="one" value="1" onclick="disp('1')"></td>
+                <td><input type="button" id="two" value="2" onclick="disp('2')"></td>
+                <td><input type="button" id="three" value="3" onclick="disp('3')"></td>
+                <td><input type="button" id="plus" value="+" onclick="disp('+')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="four" value="4" onclick="disp('4')"></td>
+                <td><input type="button" id="five" value="5" onclick="disp('5')"></td>
+                <td><input type="button" id="six" value="6" onclick="disp('6')"></td>
+                <td><input type="button" id="minus" value="-" onclick="disp('-')"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" id="seven" value="7" onclick="disp('7')"></td>
+                <td><input type="button" id="eight" value="8" onclick="disp('8')"></td>
+                <td><input type="button" id="nine" value="9" onclick="disp('9')"></td>
+                <td><input type="button" id="division" value="/" onclick="disp('/')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" id="zero" value="0" onclick="disp('0')"></td>
+                
+                <td colspan="2"><input type="button" id="equal" value="=" onclick="solve()"></td>
+                <td><input type="button" id="multiply" value="*" onclick="disp('*')"></td>
+            </tr>
+
+
+        </table>
+    </div>
+</body>
+</html>
